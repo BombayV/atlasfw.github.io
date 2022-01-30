@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+
+$ ssh-keygen -t ed25519 -C "OMGmsebastian@gmail.com"
