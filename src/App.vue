@@ -1,30 +1,39 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">Custom</router-link>
+  <div
+    id="nav"
+    class="bg-atl-9 flex justify-between items-center border-b-2 border-atl-6 h-20"
+  >
+    <router-link to="/">
+      <img src="./assets/logo.png" class="max-h-20" alt="Logo" />
+    </router-link>
+    <div
+      class="text-atl-2 w-1/4 flex justify-evenly items-center font-spline text-xl"
+    >
+      <router-link to="/documentation">Documentation</router-link>
+      <a
+        href="https://discord.gg/ffz84zfaXF"
+        target="_blank"
+        rel="nofollow"
+        >Discord</a
+      >
+      <a
+          href="https://github.com/AtlasFw"
+          target="_blank"
+          rel="nofollow"
+      >GitHub</a
+      >
+    </div>
+    <div>
+      <button
+        class="bg-atl-4 w-32 h-10 mr-2.5 rounded-md text-lg font-spline text-atl-2"
+      >
+        Soon...
+      </button>
+    </div>
   </div>
   <router-view />
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@700&display=swap");
 </style>
