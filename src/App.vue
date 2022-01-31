@@ -10,7 +10,7 @@
       class="text-atl-2 w-1/4 flex justify-evenly items-center font-spline text-xl"
     >
       <router-link to="/documentation">Documentation</router-link>
-      <a href="https://discord.gg/ffz84zfaXF" target="_blank" rel="nofollow"
+      <a href="" target="_blank" rel="nofollow"
         >Discord</a
       >
       <a href="https://github.com/AtlasFw" target="_blank" rel="nofollow"
