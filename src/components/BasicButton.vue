@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "basicButton",
+  name: "BasicButton",
   props: {
     btnText: {
       type: String,

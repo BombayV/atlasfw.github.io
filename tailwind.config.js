@@ -18,10 +18,17 @@ module.exports = {
       fontFamily: {
         spline: "'Spline Sans', sans-serif",
       },
+      textShadow: {
+        black: "3px 2px black",
+        white: "2px 2px white",
+      },
+      ringWidth: {
+        3: "3px",
+      },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwindcss-textshadow")],
 };
