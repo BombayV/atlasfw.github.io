@@ -13,14 +13,16 @@ module.exports = {
       "atl-8": "#1F364F",
       "atl-9": "#06121F",
       "atl-0": "#131C26",
+      "atl-10": "#03202c",
+      "atl-11": "#656565",
     },
     extend: {
       fontFamily: {
         spline: "'Spline Sans', sans-serif",
       },
       textShadow: {
-        black: "3px 2px black",
-        white: "2px 2px white",
+        black: "1px 1px black",
+        white: "1px 1px grey",
       },
       ringWidth: {
         3: "3px",
@@ -28,7 +30,8 @@ module.exports = {
     },
   },
   variants: {
+    scrollbar: ["dark"],
     extend: {},
   },
-  plugins: [require("tailwindcss-textshadow")],
+  plugins: [require("tailwindcss-textshadow"), require("tailwind-scrollbar")],
 };
