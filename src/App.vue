@@ -58,7 +58,7 @@
           >
           <a
             class="text-shadow-black"
-            href="https://github.com/AtlasFw"
+            href=""
             target="_blank"
             rel="nofollow"
             >GitHub</a
