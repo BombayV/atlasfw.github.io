@@ -34,7 +34,7 @@
     <!--Sidebar-->
     <div
       ref="sidebar"
-      class="sidebar fixed h-screen w-56 bg-atl-0 z-10 transition-transform duration-200 origin-center transform top-0 -translate-x-56"
+      class="sidebar fixed h-screen w-56 bg-atl-0 z-10 transition-transform duration-200 origin-center transform top-0 -translate-x-56 z-30"
     >
       <div
         class="flex flex-col items-center justify-between h-full border-r-4 border-atl-6"
@@ -134,25 +134,25 @@
     </div>
   </transition>
 
-  <button
-    @click="toggleDarkMode"
-    class="fixed flex justify-center items-center w-9 h-9 bg-atl-8 bottom-2 left-2 rounded cursor-pointer focus:ring-3 focus:ring-atl-3 hover:bg-atl-4 transition-all duration-200"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-5 w-5 text-atl-2"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-      />
-    </svg>
-  </button>
+  <!--  <button-->
+  <!--    @click="toggleDarkMode"-->
+  <!--    class="fixed flex justify-center items-center w-9 h-9 bg-atl-8 bottom-2 left-2 rounded cursor-pointer focus:ring-3 focus:ring-atl-3 hover:bg-atl-4 transition-all duration-200 z-10"-->
+  <!--  >-->
+  <!--    <svg-->
+  <!--      xmlns="http://www.w3.org/2000/svg"-->
+  <!--      class="h-5 w-5 text-atl-2"-->
+  <!--      fill="none"-->
+  <!--      viewBox="0 0 24 24"-->
+  <!--      stroke="currentColor"-->
+  <!--    >-->
+  <!--      <path-->
+  <!--        stroke-linecap="round"-->
+  <!--        stroke-linejoin="round"-->
+  <!--        stroke-width="2"-->
+  <!--        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"-->
+  <!--      />-->
+  <!--    </svg>-->
+  <!--  </button>-->
   <router-view />
 </template>
 
