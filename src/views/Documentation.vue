@@ -1,7 +1,6 @@
 <template>
   <div class="relative w-full h-screen">
-    <h1 class="text-9xl">Documentation</h1>
-    <p>This is the documentation for the</p>
+    <iframe class="w-full h-screen" src="https://bombayv.github.io/qbcore.github.io/#/"></iframe>
   </div>
 </template>
 
@@ -10,5 +9,3 @@ export default {
   name: "Documentation",
 };
 </script>
-
-<style scoped></style>
