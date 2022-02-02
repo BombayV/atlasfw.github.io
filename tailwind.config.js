@@ -3,6 +3,21 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
+      keyframes: {
+        fade: {
+          "0%": { opacity: 0, transform: "translateY(-50px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        side: {
+          "0%": { opacity: 0, transform: "translateY(50px)" },
+
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        fade: "fade 1.5s ease-out",
+        side: "side 1.5s ease-out",
+      },
       fontSize: {
         main: "20em",
       },
