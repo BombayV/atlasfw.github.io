@@ -6,6 +6,8 @@ import "./assets/tailwind.css";
 
 import us from "./locale/en.json";
 import es from "./locale/es.json";
+import br from "./locale/br.json";
+import fr from "./locale/fr.json";
 
 const app = createApp(App);
 
@@ -15,6 +17,8 @@ const i18n = createI18n({
   messages: {
     us: us,
     es: es,
+    br: br,
+    fr: fr,
   },
 });
 

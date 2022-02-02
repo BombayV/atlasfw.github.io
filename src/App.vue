@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex justify-between items-center w-full h-20 bg-atl-7 border-b-4 border-atl-6"
+    class="fixed flex justify-between items-center w-full h-20 bg-atl-7 border-b-4 border-atl-6 overflow-hidden z-30"
   >
     <svg
       @click="toggleSidebar"
@@ -17,10 +17,19 @@
         d="M4 6h16M4 12h16M4 18h16"
       />
     </svg>
-    <basic-button
-      class="w-32 h-2/4 mr-2.5 cursor-not-allowed text-shadow-black font-semibold"
-      btn-text="Coming soon..."
-    ></basic-button>
+    <div class="flex justify-end items-center h-full w-80">
+      <img
+        ref="logoTwo"
+        @click="toggleLanguage"
+        src="./assets/flags/us.svg"
+        alt="Flag"
+        class="w-12 h-auto mr-3 cursor-pointer hidden md:flex"
+      />
+      <basic-button
+        class="w-40 h-2/4 mr-2.5 cursor-not-allowed text-shadow-black font-semibold"
+        :btn-text="$t('COMING_SOON')"
+      ></basic-button>
+    </div>
 
     <!--Sidebar-->
     <div
@@ -46,16 +55,16 @@
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
-          <span class="font-spline text-xl mr-4 text-atl-2 underline"
-            >Menu</span
-          >
+          <span class="font-spline text-xl mr-4 text-atl-2 underline">{{
+            $t("MENU")
+          }}</span>
         </div>
         <div
           class="flex flex-col items-center justify-evenly text-atl-2 text-xl font-spline mt-4"
         >
-          <router-link class="text-shadow-black font-semibold" to="/"
-            >Home</router-link
-          >
+          <router-link class="text-shadow-black font-semibold" to="/">{{
+            $t("HOME")
+          }}</router-link>
           <a
             class="text-shadow-black font-semibold"
             href=""
@@ -66,7 +75,7 @@
           <router-link
             class="text-shadow-black font-semibold"
             to="/documentation"
-            >Documentation</router-link
+            >{{ $t("DOCUMENTATION") }}</router-link
           >
           <a
             class="text-shadow-black font-semibold"
@@ -78,10 +87,11 @@
         </div>
         <div class="flex flex-col items-center justify-evenly">
           <img
+            ref="logo"
             @click="toggleLanguage"
             src="./assets/flags/us.svg"
             alt="Flag"
-            class="w-12 mb-2 cursor-pointer"
+            class="w-12 mb-2 cursor-pointer flex md:hidden"
           />
           <span class="mb-4 text-atl-2 font-spline">Copyright © 2022</span>
         </div>
@@ -93,7 +103,7 @@
   <transition name="slide-fade">
     <div
       v-show="chooseLanguage"
-      class="z-10 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-between items-center h-72 w-80 bg-atl-10 rounded border-atl-6 ring-1 ring-atl-6"
+      class="z-10 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col justify-between items-center h-72 w-80 bg-atl-10 rounded border-atl-6 ring-1 ring-atl-6 xl:w-144"
     >
       <p
         class="text-shadow-black text-atl-2 text-xl mt-3 font-spline w-full text-center border-atl-6 border-b-2 h-10 font-bold"
@@ -101,11 +111,11 @@
         {{ $t("CHOOSE_LANGUAGE") }}
       </p>
       <div
-        class="scrollbar flex flex-col justify-content items-center w-full overflow-y-auto h-60 mb-4 mt-4"
+        class="scrollbar flex flex-col justify-content items-center w-full overflow-y-auto h-60 mb-4 mt-4 xl:flex-row xl:flex-1 xl:justify-around xl:flex-wrap xl:w-5/6 xl:m-3 xl:h-full"
       >
         <button
           @click="setLanguage(locale.lang)"
-          class="flex flex-col justify-content items-center w-48 rounded transition-colors duration-250 hover:bg-atl-6"
+          class="flex flex-col justify-content items-center w-48 rounded transition-colors duration-250 hover:bg-atl-6 xl:w-1/3"
           v-for="locale in locales"
           :key="locale.lang"
         >
@@ -148,7 +158,7 @@
 
 <script>
 import BasicButton from "@/components/BasicButton";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import i18n from "@/main";
 export default {
   name: "App",
@@ -162,13 +172,23 @@ export default {
     ]);
     const html = document.querySelector("html");
     const sidebar = ref(null);
+    const logo = ref(null);
+    const logoTwo = ref(null);
     const darkMode = ref(false);
     const chooseLanguage = ref(false);
+
+    onMounted(() => {
+      const lang = localStorage.getItem("lang") || "us";
+      logo.value.src = require(`./assets/flags/${lang}.svg`);
+      logoTwo.value.src = require(`./assets/flags/${lang}.svg`);
+    });
 
     const setLanguage = (lang) => {
       i18n.global.locale = lang;
       localStorage.setItem("lang", lang);
       chooseLanguage.value = false;
+      logoTwo.value.src = require(`./assets/flags/${lang}.svg`);
+      logo.value.src = require(`./assets/flags/${lang}.svg`);
     };
     const toggleSidebar = () => {
       if (chooseLanguage.value) return;
@@ -191,6 +211,8 @@ export default {
       chooseLanguage.value = !chooseLanguage.value;
     };
     return {
+      logo,
+      logoTwo,
       sidebar,
       locales,
       chooseLanguage,
@@ -216,19 +238,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   background-color: #fafafa;
-}
-
-.slide-fade-enter-active {
-  transition: all 0.15s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.15s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
 }
 </style>

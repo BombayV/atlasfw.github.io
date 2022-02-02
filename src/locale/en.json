@@ -1,3 +1,9 @@
 {
-	"CHOOSE_LANGUAGE": "Language Select"
+	"DESCRIPTION": "An Innovative RPG FiveM Framework",
+	"CHOOSE_LANGUAGE": "Language Select",
+	"COMING_SOON": "Coming Soon",
+	"DOCUMENTATION": "Documentation",
+	"HOME": "Home",
+	"MENU": "Menu",
+	"GET_STARTED": "Get Started"
 }
