@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed flex justify-between items-center w-full h-20 bg-atl-7 border-b-4 border-atl-6 overflow-hidden z-30"
+    class="flex justify-between items-center w-full h-20 bg-atl-7 border-b-4 border-atl-6 overflow-hidden z-30"
   >
     <svg
       @click="toggleSidebar"
@@ -98,7 +98,6 @@
       </div>
     </div>
   </nav>
-  <router-view />
 
   <transition name="slide-fade">
     <div
@@ -154,6 +153,7 @@
       />
     </svg>
   </button>
+  <router-view />
 </template>
 
 <script>
