@@ -1,9 +1,9 @@
 <template>
   <div class="relative w-full h-screen">
     <iframe
-        loading="eager"
+      loading="eager"
       class="w-full h-screen"
-      src="https://bombayv.github.io/qbcore.github.io/#/"
+      src="https://atlasfw-docs.pages.dev/#/"
     ></iframe>
   </div>
 </template>
