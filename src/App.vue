@@ -113,7 +113,10 @@
         class="scrollbar flex flex-col justify-content items-center w-full overflow-y-auto h-60 mb-4 mt-4 xl:flex-row xl:flex-1 xl:justify-around xl:flex-wrap xl:w-5/6 xl:m-3 xl:h-full"
       >
         <button
-          @click="$emit('updateStatus', 'test'); setLanguage(locale.lang);"
+          @click="
+            $emit('updateStatus', 'test');
+            setLanguage(locale.lang);
+          "
           class="flex flex-col justify-content items-center w-48 rounded transition-colors duration-250 hover:bg-atl-6 xl:w-1/3"
           v-for="locale in locales"
           :key="locale.lang"
@@ -153,7 +156,7 @@
   <!--      />-->
   <!--    </svg>-->
   <!--  </button>-->
-  <router-view @updateStatus="updateStatus"/>
+  <router-view @updateStatus="updateStatus" />
 </template>
 
 <script>
@@ -169,6 +172,7 @@ export default {
       { lang: "es", footer: "Español" },
       { lang: "br", footer: "Português" },
       { lang: "fr", footer: "Français" },
+      { lang: "ct", footer: "Català" },
     ]);
     const html = document.querySelector("html");
     const sidebar = ref(null);

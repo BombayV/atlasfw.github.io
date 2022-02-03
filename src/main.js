@@ -8,6 +8,7 @@ import us from "./locale/en.json";
 import es from "./locale/es.json";
 import br from "./locale/br.json";
 import fr from "./locale/fr.json";
+import ct from "./locale/ct.json";
 
 const app = createApp(App);
 
@@ -19,6 +20,7 @@ const i18n = createI18n({
     es: es,
     br: br,
     fr: fr,
+    ct: ct,
   },
 });
 
