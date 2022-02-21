@@ -67,7 +67,7 @@
           }}</router-link>
           <a
             class="text-shadow-black font-semibold"
-            href=""
+            href="https://discord.gg/ffz84zfaXF"
             target="_blank"
             rel="nofollow"
             >Discord</a
@@ -79,7 +79,7 @@
           >
           <a
             class="text-shadow-black font-semibold"
-            href=""
+            href="https://github.com/AtlasFw"
             target="_blank"
             rel="nofollow"
             >GitHub</a
