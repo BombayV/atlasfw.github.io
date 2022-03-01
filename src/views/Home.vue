@@ -78,7 +78,11 @@
         <button
           class="transform hover:scale-105 animate-side w-48 h-14 bg-atl-10 font-semibold text-atl-1 text-shadow-black rounded border-2 border-atl-4 duration-150 hover:bg-atl-9 hover:text-atl-2 focus:ring-3 focus:ring-atl-3"
         >
-          {{ $t("COMING_SOON") }}
+          <router-link
+            class="text-shadow-black font-semibold"
+            :to="{ name: 'Documentation' }"
+          >{{ $t("GET_STARTED") }}</router-link
+          >
         </button>
       </div>
     </div>
