@@ -84,6 +84,13 @@
             rel="nofollow"
             >GitHub</a
           >
+          <a
+            class="text-shadow-black font-semibold"
+            href="https://youtube.com/channel/UCM3ir9Mh9-Sih9PFCjCQZNw"
+            target="_blank"
+            rel="nofollow"
+          >Youtube</a
+          >
         </div>
         <div class="flex flex-col items-center justify-evenly">
           <img
