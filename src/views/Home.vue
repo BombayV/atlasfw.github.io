@@ -66,9 +66,9 @@
           ></path>
         </svg>
       </div>
-      <div class="fixed h-full flex flex-col items-center justify-center">
+      <div class="absolute h-full flex flex-col items-center justify-center">
         <span
-          class="font-spline text-9xl text-atl-2 text-center font-extrabold text-shadow-title xl:text-main animate-fade"
+          class="font-spline text-9xl text-atl-2 text-center font-extrabold text-shadow-title xl:text-main animate-fade mt-12"
           >Atlas</span
         >
         <span
