@@ -1,6 +1,6 @@
 <template>
-  <div class="relative w-full h-screen">
-    <iframe loading="eager" class="w-full h-screen" :src="web"></iframe>
+  <div class="fixed w-full h-full mt-20">
+    <iframe loading="eager" class="relative w-full h-full" :src="web"></iframe>
   </div>
 </template>
 

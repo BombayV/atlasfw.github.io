@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex justify-between items-center w-full h-20 bg-atl-7 border-b-4 border-atl-6 overflow-hidden z-30"
+    class="fixed flex justify-between items-center w-full h-20 bg-atl-7 border-b-4 border-atl-6 overflow-hidden z-30"
   >
     <svg
       @click="toggleSidebar"
@@ -117,7 +117,7 @@
         {{ $t("CHOOSE_LANGUAGE") }}
       </p>
       <div
-        class="scrollbar flex flex-col justify-content items-center w-full overflow-y-auto h-60 mb-4 mt-4 xl:flex-row xl:flex-1 xl:justify-around xl:flex-wrap xl:w-5/6 xl:m-3 xl:h-full"
+        class="flex flex-col justify-content items-center w-full overflow-hidden h-60 mb-4 mt-4 xl:flex-row xl:flex-1 xl:justify-around xl:flex-wrap xl:w-5/6 xl:m-3 xl:h-full"
       >
         <button
           @click="
@@ -163,7 +163,7 @@
   <!--      />-->
   <!--    </svg>-->
   <!--  </button>-->
-  <router-view @updateStatus="updateStatus" />
+  <router-view/>
 </template>
 
 <script>
