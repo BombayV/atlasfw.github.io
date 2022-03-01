@@ -66,19 +66,21 @@
           ></path>
         </svg>
       </div>
-      <span
-        class="fixed font-spline text-9xl text-atl-2 bottom-80 text-center font-extrabold w-full text-shadow-title xl:text-main animate-fade"
-        >Atlas</span
-      >
-      <span
-        class="fixed font-spline text-xl text-atl-11 bottom-72 w-full text-center font-semi text-shadow-black xl:text-5xl xl:mb-0 xl:bottom-72 animate-fade"
-        >{{ $t("DESCRIPTION") }}</span
-      >
-      <button
-        class="transform hover:scale-105 animate-side fixed w-48 h-14 bg-atl-10 bottom-32 font-semibold text-atl-1 text-shadow-black rounded border-2 border-atl-4 duration-150 hover:bg-atl-9 hover:text-atl-2 focus:ring-3 focus:ring-atl-3"
-      >
-        {{ $t("COMING_SOON") }}
-      </button>
+      <div class="absolute h-full flex flex-col items-center justify-center">
+        <span
+          class="font-spline text-9xl text-atl-2 text-center font-extrabold text-shadow-title xl:text-main animate-fade"
+          >Atlas</span
+        >
+        <span
+          class="font-spline text-xl text-atl-11 text-center font-semi text-shadow-black xl:text-5xl animate-fade mb-6"
+          >{{ $t("DESCRIPTION") }}</span
+        >
+        <button
+          class="transform hover:scale-105 animate-side w-48 h-14 bg-atl-10 font-semibold text-atl-1 text-shadow-black rounded border-2 border-atl-4 duration-150 hover:bg-atl-9 hover:text-atl-2 focus:ring-3 focus:ring-atl-3"
+        >
+          {{ $t("COMING_SOON") }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
