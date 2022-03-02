@@ -14,6 +14,9 @@ module.exports = {
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },
+      height: {
+        custom: "94%",
+      },
       animation: {
         fade: "fade 1.5s ease-out",
         side: "side 1.5s ease-out",

@@ -1,6 +1,10 @@
 <template>
   <div class="fixed w-full h-full mt-20">
-    <iframe loading="eager" class="relative w-full h-full" :src="web"></iframe>
+    <iframe
+      loading="eager"
+      class="relative w-full h-custom"
+      :src="web"
+    ></iframe>
   </div>
 </template>
 

@@ -81,7 +81,7 @@
           <router-link
             class="text-shadow-black font-semibold"
             :to="{ name: 'Documentation' }"
-          >{{ $t("GET_STARTED") }}</router-link
+            >{{ $t("GET_STARTED") }}</router-link
           >
         </button>
       </div>
