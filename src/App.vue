@@ -34,7 +34,7 @@
     <!--Sidebar-->
     <div
       ref="sidebar"
-      class="sidebar fixed h-screen w-56 bg-atl-0 z-10 transition-transform duration-200 origin-center transform top-0 -translate-x-56 z-30"
+      class="sidebar fixed h-screen w-64 bg-atl-0 z-10 transition-transform duration-200 origin-center transform top-0 -translate-x-64 z-30"
     >
       <div
         class="flex flex-col items-center justify-between h-full border-r-4 border-atl-6"
@@ -62,10 +62,14 @@
         <div
           class="flex flex-col items-center justify-evenly text-atl-2 text-xl font-spline mt-4"
         >
-          <router-link class="text-shadow-black font-semibold" to="/">{{
-            $t("HOME")
-          }}</router-link>
+          <router-link
+            @click="closeSidebar"
+            class="text-shadow-black font-semibold"
+            to="/"
+            >{{ $t("HOME") }}</router-link
+          >
           <a
+            @click="closeSidebar"
             class="text-shadow-black font-semibold"
             href="https://discord.gg/ffz84zfaXF"
             target="_blank"
@@ -73,11 +77,21 @@
             >Discord</a
           >
           <router-link
+            @click="closeSidebar"
             class="text-shadow-black font-semibold"
             :to="{ name: 'Documentation' }"
             >{{ $t("DOCUMENTATION") }}</router-link
           >
           <a
+            @click="closeSidebar"
+            class="text-shadow-black font-semibold"
+            href="https://ko-fi.com/atlasframework"
+            target="_blank"
+            rel="nofollow"
+            >Donations</a
+          >
+          <a
+            @click="closeSidebar"
             class="text-shadow-black font-semibold"
             href="https://github.com/AtlasFw"
             target="_blank"
@@ -85,6 +99,7 @@
             >GitHub</a
           >
           <a
+            @click="closeSidebar"
             class="text-shadow-black font-semibold"
             href="https://youtube.com/channel/UCM3ir9Mh9-Sih9PFCjCQZNw"
             target="_blank"
@@ -105,6 +120,10 @@
       </div>
     </div>
   </nav>
+
+  <div class="fixed w-full h-custom top-20">
+    <router-view />
+  </div>
 
   <transition name="slide-fade">
     <div
@@ -163,7 +182,6 @@
   <!--      />-->
   <!--    </svg>-->
   <!--  </button>-->
-  <router-view />
 </template>
 
 <script>
@@ -203,11 +221,16 @@ export default {
     };
     const toggleSidebar = () => {
       if (chooseLanguage.value) return;
-      if (!sidebar.value.classList.contains("-translate-x-56")) {
-        sidebar.value.classList.add("-translate-x-56");
+      if (!sidebar.value.classList.contains("-translate-x-64")) {
+        sidebar.value.classList.add("-translate-x-64");
       } else {
-        sidebar.value.classList.remove("-translate-x-56");
+        sidebar.value.classList.remove("-translate-x-64");
       }
+    };
+    const closeSidebar = () => {
+      console.log("close");
+      if (chooseLanguage.value) return;
+      sidebar.value.classList.add("-translate-x-64");
     };
     const toggleDarkMode = () => {
       darkMode.value = !darkMode.value;
@@ -216,8 +239,8 @@ export default {
         : html.classList.remove("dark");
     };
     const toggleLanguage = () => {
-      if (!sidebar.value.classList.contains("-translate-x-56")) {
-        sidebar.value.classList.add("-translate-x-56");
+      if (!sidebar.value.classList.contains("-translate-x-64")) {
+        sidebar.value.classList.add("-translate-x-64");
       }
       chooseLanguage.value = !chooseLanguage.value;
     };
@@ -230,6 +253,7 @@ export default {
       toggleDarkMode,
       toggleLanguage,
       toggleSidebar,
+      closeSidebar,
       setLanguage,
       BasicButton,
     };
