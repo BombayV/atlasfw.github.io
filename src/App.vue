@@ -136,7 +136,7 @@
         {{ $t("CHOOSE_LANGUAGE") }}
       </p>
       <div
-        class="flex flex-col justify-content items-center w-full overflow-hidden h-60 mb-4 mt-4 xl:flex-row xl:flex-1 xl:justify-around xl:flex-wrap xl:w-5/6 xl:m-3 xl:h-full"
+        class="flex flex-col justify-content items-center w-full overflow-hidden h-60 mb-4 mt-4 xl:flex-row xl:flex-1 xl:justify-around xl:flex-wrap xl:w-5/6 xl:m-3 xl:h-full scrollbar"
       >
         <button
           @click="
