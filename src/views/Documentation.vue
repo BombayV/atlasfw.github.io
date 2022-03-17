@@ -3,21 +3,19 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
-
 export default {
   name: "Documentation",
-  setup() {
-    const web = ref("https://atlasfw-docs.pages.dev/");
-    onMounted(() => {
-      const lang = localStorage.getItem("lang") || "us";
-      if (lang !== "us") {
-        web.value = `https://atlasfw-docs.pages.dev/${lang}/`;
-      }
-    });
+  data() {
     return {
-      web,
+      web: "https://atlasfw-docs.pages.dev/",
     };
+  },
+  mounted() {
+    this.web = "https://atlasfw-docs.pages.dev/";
+    const lang = localStorage.getItem("lang") || "us";
+    if (lang !== "us") {
+      this.web = `https://atlasfw-docs.pages.dev/${lang}/`;
+    }
   },
 };
 </script>

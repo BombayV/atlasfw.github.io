@@ -139,10 +139,7 @@
         class="flex flex-col justify-content items-center w-full overflow-hidden h-60 mb-4 mt-4 xl:flex-row xl:flex-1 xl:justify-around xl:flex-wrap xl:w-5/6 xl:m-3 xl:h-full scrollbar"
       >
         <button
-          @click="
-            $emit('updateStatus', 'test');
-            setLanguage(locale.lang);
-          "
+          @click="setLanguage(locale.lang)"
           class="flex flex-col justify-content items-center w-48 rounded transition-colors duration-250 hover:bg-atl-6 xl:w-1/3"
           v-for="locale in locales"
           :key="locale.lang"
@@ -186,7 +183,8 @@
 
 <script>
 import BasicButton from "@/components/BasicButton";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { useRoute } from "vue-router";
 import i18n from "@/main";
 export default {
   name: "App",
@@ -205,6 +203,9 @@ export default {
     const logoTwo = ref(null);
     const darkMode = ref(false);
     const chooseLanguage = ref(false);
+    const route = useRoute();
+
+    const path = computed(() => route.path);
 
     onMounted(() => {
       const lang = localStorage.getItem("lang") || "us";
@@ -218,6 +219,9 @@ export default {
       chooseLanguage.value = false;
       logoTwo.value.src = require(`./assets/flags/${lang}.svg`);
       logo.value.src = require(`./assets/flags/${lang}.svg`);
+      if (path.value !== "/") {
+        window.location.reload();
+      }
     };
     const toggleSidebar = () => {
       if (chooseLanguage.value) return;
