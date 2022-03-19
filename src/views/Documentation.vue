@@ -7,14 +7,14 @@ export default {
   name: "Documentation",
   data() {
     return {
-      web: "https://atlasfw-docs.pages.dev/",
+      web: "https://atlasfw-docs.pages.dev/en/intro",
     };
   },
   mounted() {
-    this.web = "https://atlasfw-docs.pages.dev/";
+    this.web = "https://atlasfw-docs.pages.dev/intro";
     const lang = localStorage.getItem("lang") || "us";
     if (lang !== "us") {
-      this.web = `https://atlasfw-docs.pages.dev/${lang}/`;
+      this.web = `https://atlasfw-docs.pages.dev/${lang}/intro`;
     }
   },
 };
