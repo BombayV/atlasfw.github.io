@@ -11,7 +11,7 @@ export default {
     };
   },
   mounted() {
-    this.web = "https://atlasfw-docs.pages.dev/intro";
+    this.web = "https://atlasfw-docs.pages.dev/en/intro";
     const lang = localStorage.getItem("lang") || "us";
     if (lang !== "us") {
       this.web = `https://atlasfw-docs.pages.dev/${lang}/intro`;
